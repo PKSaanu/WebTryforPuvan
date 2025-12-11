@@ -1,5 +1,7 @@
 "use client"
 
+import { useEffect } from "react"
+
 interface CollectionExplorePopupProps {
   isOpen: boolean
   collection: {
@@ -15,6 +17,20 @@ interface CollectionExplorePopupProps {
 }
 
 export default function CollectionExplorePopup({ isOpen, collection, onClose }: CollectionExplorePopupProps) {
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+
+    // Cleanup when component unmounts
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [isOpen])
+
   if (!isOpen || !collection) return null
 
   const whatsappUrl = `https://wa.me/94771103133?text=Hi!%20I'm%20interested%20in%20the%20${encodeURIComponent(collection.title)}%20collection`

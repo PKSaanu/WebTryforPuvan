@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 w-full z-50">
       {/* ------------------- RUNNER STRIP ------------------- */}
-      <div className="w-full bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 text-neutral-100 overflow-hidden">
+      <div className="w-full bg-slate-900 text-neutral-100 overflow-hidden">
         <div className="relative py-[3px]">
 
           <style>{`
@@ -42,6 +42,22 @@ export default function Header() {
       <div className="bg-background/95 backdrop-blur-md border-b border-border/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
+            <style>
+              {`
+                @keyframes slideDown {
+                  0% { opacity: 0; transform: translateY(-10px); }
+                  100% { opacity: 1; transform: translateY(0); }
+                }
+                .menu-animate {
+                  animation: slideDown 0.25s ease-out forwards;
+                }
+
+                .rotate-open {
+                  transform: rotate(90deg);
+                }
+              `}
+            </style>
+
             <Link href="#intro" className="flex items-center gap-2">
               <img
                 src="/images/logo.webp"
@@ -57,7 +73,7 @@ export default function Header() {
               <Link href="#contact" className="text-sm font-light text-foreground/70 hover:text-accent transition">Contact</Link>
             </nav>
 
-            <div className="hidden sm:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-4">
 
               <a
                 href="https://www.facebook.com/PuvanTex"
@@ -73,22 +89,40 @@ export default function Header() {
             </div>
 
             <button
-              className="md:hidden p-2 hover:bg-muted rounded-lg transition"
+              className={`md:hidden p-2 hover:bg-muted rounded-lg transition ${isMenuOpen ? "rotate-open" : ""}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              {isMenuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
+
           </div>
 
           {isMenuOpen && (
-            <nav className="md:hidden pb-4 space-y-2 border-t border-border/40">
-              <Link href="#arrivals" className="block text-sm font-light text-foreground/70 hover:text-accent transition py-3">New Arrivals</Link>
-              <Link href="#announcements" className="block text-sm font-light text-foreground/70 hover:text-accent transition py-3">Collections</Link>
-              <Link href="#location" className="block text-sm font-light text-foreground/70 hover:text-accent transition py-3">Location</Link>
-              <Link href="#contact" className="block text-sm font-light text-foreground/70 hover:text-accent transition py-3">Contact</Link>
+            <nav className="md:hidden pb-4 space-y-2 border-t border-border/40 menu-animate">
+              <Link href="#arrivals" onClick={() => setIsMenuOpen(false)} className="block text-sm font-light text-foreground/70 hover:text-accent transition py-3">
+                New Arrivals
+              </Link>
+
+              <Link href="#announcements" onClick={() => setIsMenuOpen(false)} className="block text-sm font-light text-foreground/70 hover:text-accent transition py-3">
+                Collections
+              </Link>
+
+              <Link href="#location" onClick={() => setIsMenuOpen(false)} className="block text-sm font-light text-foreground/70 hover:text-accent transition py-3">
+                Location
+              </Link>
+
+              <Link href="#contact" onClick={() => setIsMenuOpen(false)} className="block text-sm font-light text-foreground/70 hover:text-accent transition py-3">
+                Contact
+              </Link>
             </nav>
           )}
         </div>

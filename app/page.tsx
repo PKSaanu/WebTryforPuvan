@@ -2,7 +2,6 @@
 
 import Header from "@/components/header"
 import Hero from "@/components/hero"
-import BusinessHoursRunner from "@/components/business-hours-runner"
 import SpecialOfferPopup from "@/components/special-offer-popup"
 import NewArrivals from "@/components/new-arrivals-carousel"
 import Announcements from "@/components/announcements-hero"
@@ -13,7 +12,6 @@ import WhatsAppButton from "@/components/whatsapp-button"
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
-      <BusinessHoursRunner />
       <SpecialOfferPopup />
       <Header />
       <Hero />

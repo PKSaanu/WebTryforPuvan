@@ -55,7 +55,7 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose}></div>
 
       {/* Modal */}
-      <div className="relative bg-background border border-accent/20 rounded-2xl overflow-hidden max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-accent/20">
+      <div className="relative bg-background border border-accent/20 rounded-2xl overflow-hidden max-w-3xl w-full max-h-[90vh] overflow-y-hidden shadow-2xl shadow-accent/20">
         {/* Close button */}
         {/* <button
           onClick={onClose}
@@ -81,9 +81,8 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
                 <button
                   key={idx}
                   onClick={() => setCurrentImageIndex(idx)}
-                  className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition ${
-                    currentImageIndex === idx ? "border-accent" : "border-accent/20 hover:border-accent/40"
-                  }`}
+                  className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition ${currentImageIndex === idx ? "border-accent" : "border-accent/20 hover:border-accent/40"
+                    }`}
                 >
                   <img src={img || "/placeholder.svg"} alt={`View ${idx + 1}`} className="w-full h-full object-cover" />
                 </button>
@@ -109,11 +108,10 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
                   <button
                     key={color.name}
                     onClick={() => setSelectedColor(color)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition ${
-                      selectedColor.name === color.name
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition ${selectedColor.name === color.name
                         ? "border-accent bg-accent/10"
                         : "border-accent/20 hover:border-accent/40"
-                    }`}
+                      }`}
                   >
                     <div className="w-4 h-4 rounded-full" style={{ backgroundColor: color.hex }}></div>
                     <span className="text-sm font-light">{color.name}</span>
@@ -130,11 +128,10 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`py-2 rounded-lg border-2 font-light text-sm transition ${
-                      selectedSize === size
+                    className={`py-2 rounded-lg border-2 font-light text-sm transition ${selectedSize === size
                         ? "border-accent bg-accent text-background"
                         : "border-accent/20 text-foreground hover:border-accent/40"
-                    }`}
+                      }`}
                   >
                     {size}
                   </button>
