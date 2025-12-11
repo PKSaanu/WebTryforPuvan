@@ -1,7 +1,7 @@
 "use client"
 
 import { X } from "lucide-react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 interface ProductModalProps {
   isOpen: boolean
@@ -24,6 +24,29 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
   const [selectedSize, setSelectedSize] = useState(product.sizes[0])
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+
+    // Cleanup when component unmounts
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [isOpen])
+
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "94771103133"
+    const message =
+      "Hello! I'd like to inquire about Puvan Tex new arrivals and collections."
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`
+    window.open(whatsappURL, "_blank")
+  }
+
   if (!isOpen) return null
 
   return (
@@ -34,12 +57,12 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
       {/* Modal */}
       <div className="relative bg-background border border-accent/20 rounded-2xl overflow-hidden max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-accent/20">
         {/* Close button */}
-        <button
+        {/* <button
           onClick={onClose}
           className="sticky top-4 right-4 absolute z-10 p-2 hover:bg-accent/10 rounded-full transition"
         >
           <X className="w-6 h-6 text-foreground/60 hover:text-accent" />
-        </button>
+        </button> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
           {/* Image Gallery */}
@@ -101,7 +124,7 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
 
             {/* Sizes */}
             <div className="space-y-3">
-              <p className="text-sm font-semibold text-foreground uppercase tracking-wider">Select Size</p>
+              <p className="text-sm font-semibold text-foreground uppercase tracking-wider">Available Size</p>
               <div className="grid grid-cols-4 gap-2">
                 {product.sizes.map((size) => (
                   <button
@@ -121,8 +144,8 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
 
             {/* CTA */}
             <div className="flex gap-3 pt-4">
-              <button className="flex-1 px-6 py-3 bg-gradient-to-r from-accent to-secondary text-background font-light rounded-lg hover:shadow-lg hover:shadow-accent/30 transition duration-300 text-sm tracking-wide uppercase">
-                Contact on WhatsApp
+              <button onClick={handleWhatsAppClick} className="flex-1 px-6 py-3 bg-gradient-to-r from-accent to-secondary text-background font-light rounded-lg hover:shadow-lg hover:shadow-accent/30 transition duration-300 text-sm tracking-wide uppercase">
+                WhatsApp Me
               </button>
               <button
                 onClick={onClose}

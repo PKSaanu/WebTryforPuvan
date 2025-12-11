@@ -1,5 +1,6 @@
 "use client"
 
+import { Facebook } from "lucide-react"
 import Link from "next/link"
 
 export default function Footer() {
@@ -51,20 +52,42 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
+          {/* Contact */}
           <div className="space-y-4">
             <h4 className="font-serif font-light text-foreground/60 text-sm uppercase tracking-wider">Contact</h4>
             <div className="space-y-3 text-sm">
-              <div>
-                <p className="text-foreground/70 font-light">Northern Region, Sri Lanka</p>
-              </div>
-              <div>
-                <a href="tel:+94771103133" className="text-secondary hover:text-secondary/80 font-light text-sm">
+              {/* Address */}
+              <p className="text-foreground/70 font-light">
+                Puthukudiyiruppu Town, Mullaitivu<br />
+                Sri Lanka
+              </p>
+
+              {/* Phone */}
+              <div className="flex items-center gap-2">
+                <span className="text-foreground/50 text-secondary font-light">Tel:</span>
+                <a
+                  href="tel:+94771103133"
+                  className="text-secondary hover:text-secondary/80 font-light text-sm"
+                >
                   +94 77 110 3133
                 </a>
-                <p className="text-foreground/50 text-xs mt-1 font-light">WhatsApp Available</p>
+              </div>
+
+              {/* Facebook */}
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://www.facebook.com/PuvanTex"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary hover:text-secondary/80 font-light text-sm"
+                >
+                  Follow us on Facebook
+                </a>
               </div>
             </div>
           </div>
+
+
         </div>
 
         <div className="border-t border-border/50 pt-8">

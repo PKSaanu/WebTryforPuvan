@@ -58,6 +58,15 @@ export default function Header() {
             </nav>
 
             <div className="hidden sm:flex items-center gap-4">
+
+              <a
+                href="https://www.facebook.com/PuvanTex"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-light text-accent hover:text-secondary transition"
+              >
+                Facebook
+              </a>
               <a href="tel:+94771103133" className="text-sm font-light text-accent hover:text-secondary transition">
                 +94 77 110 3133
               </a>
