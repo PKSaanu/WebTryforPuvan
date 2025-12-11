@@ -2,29 +2,36 @@
 
 export default function Hero() {
   return (
-    <section id="intro" className="relative pt-32 pb-24 md:pt-40 md:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section
+      id="intro"
+      className="relative min-h-screen px-4 sm:px-6 lg:px-8 flex items-center overflow-hidden"
+    >
+      {/* Background shapes */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8 animate-fade-in-up">
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center h-full">
+          {/* Left content */}
+          <div className="space-y-8 animate-fade-in-up flex flex-col justify-center h-full">
             <div className="space-y-6">
-              <div className="inline-block">
-                <p className="text-xs font-semibold text-accent/80 uppercase tracking-[0.2em]">Premium Collection</p>
-              </div>
+              <p className="text-xs font-semibold text-accent/80 uppercase tracking-[0.2em]">
+                Premium Collection
+              </p>
               <h1 className="text-6xl md:text-7xl xl:text-8xl font-serif font-light text-foreground leading-tight">
                 Lower Price
                 <br />
-                <span className="text-gradient-cyan-gold font-normal glow-accent">Best Collections</span>
+                <span className="text-gradient-cyan-gold font-normal glow-accent">
+                  Best Collections
+                </span>
               </h1>
             </div>
 
             <p className="text-lg text-foreground/60 leading-relaxed max-w-lg font-light">
-              Curated textile collections that blend South Indian tradition with contemporary design. Each piece crafted
-              for those who appreciate refined style and authenticity.
+              Curated textile collections that blend South Indian tradition with contemporary design.
+              Each piece crafted for those who appreciate refined style and authenticity.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-6">
@@ -43,7 +50,8 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative h-96 md:h-[500px] lg:h-[600px] group">
+          {/* Right image */}
+          <div className="relative w-full h-96 md:h-[500px] lg:h-[600px] flex items-center justify-center">
             <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-transparent rounded-2xl z-10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
             <img
               src="/south-indian-woman-elegant-textile-saree.jpg"

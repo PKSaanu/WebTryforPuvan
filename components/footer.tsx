@@ -81,7 +81,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-secondary hover:text-secondary/80 font-light text-sm"
                 >
-                  Follow us on Facebook
+                  Follow us on facebook
                 </a>
               </div>
             </div>

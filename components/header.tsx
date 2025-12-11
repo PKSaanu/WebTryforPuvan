@@ -81,7 +81,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className="text-sm font-light text-accent hover:text-secondary transition"
               >
-                Facebook
+                facebook
               </a>
               <a href="tel:+94771103133" className="text-sm font-light text-accent hover:text-secondary transition">
                 +94 77 110 3133
