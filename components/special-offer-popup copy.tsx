@@ -5,41 +5,35 @@ import { X } from "lucide-react"
 
 export default function SpecialOfferPopup() {
   const [isOpen, setIsOpen] = useState(false)
-  const [countdown, setCountdown] = useState("")
+  const [hasShown, setHasShown] = useState(false)
+
+  // useEffect(() => {
+  //   const hasShownPopup = localStorage.getItem("specialOfferShown")
+  //   const isOfferActive = true // Change this to false to disable the popup
+
+  //   if (isOfferActive && !hasShownPopup) {
+  //     const timer = setTimeout(() => {
+  //       setIsOpen(true)
+  //       setHasShown(true)
+  //     }, 2000)
+
+  //     return () => clearTimeout(timer)
+  //   }
+  // }, [])
 
   useEffect(() => {
-    // OPEN POPUP IMMEDIATELY (or keep your 2-second delay if needed)
-    const timer = setTimeout(() => {
-      setIsOpen(true)
-    }, 1000)
+    const isOfferActive = true // Change this to false to disable the popup
 
-    return () => clearTimeout(timer)
+    if (isOfferActive) {
+      const timer = setTimeout(() => {
+        setIsOpen(true)
+        setHasShown(true)
+      }, 2000)
+
+      return () => clearTimeout(timer)
+    }
   }, [])
 
-  useEffect(() => {
-    // TARGET DATE → Christmas 2025
-    const targetDate = new Date("2025-12-16T00:00:00")
-
-    const interval = setInterval(() => {
-      const now = new Date()
-      const diff = targetDate.getTime() - now.getTime()
-
-      if (diff <= 0) {
-        setCountdown("Arriving Today!")
-        clearInterval(interval)
-        return
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000)
-
-      setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`)
-    }, 1000)
-
-    return () => clearInterval(interval)
-  }, [])
 
   const handleClose = () => {
     setIsOpen(false)
@@ -50,11 +44,17 @@ export default function SpecialOfferPopup() {
 
   return (
     <div className="fixed pt-[120px] inset-0 z-50 flex items-center justify-center px-4">
+      {/* Backdrop */}
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={handleClose}></div>
 
+      {/* Modal */}
       <div className="relative bg-background border border-accent/20 rounded-2xl p-8 max-w-md w-full shadow-2xl shadow-accent/20 animate-in fade-in zoom-in-95 duration-300">
-        <div className="space-y-6">
+        {/* <button onClick={handleClose} className="absolute top-4 right-4 p-2 hover:bg-accent/10 rounded-full transition">
+          <X className="w-5 h-5 text-foreground/60 hover:text-accent" />
+        </button> */}
 
+        <div className="space-y-6">
+          {/* Header */}
           <div className="space-y-2">
             <div className="inline-block mb-4">
               <span className="px-4 py-2 bg-gradient-to-r from-accent to-secondary text-background text-xs font-semibold rounded-full">
@@ -68,22 +68,18 @@ export default function SpecialOfferPopup() {
             </h2>
           </div>
 
+          {/* Description */}
           <p className="text-foreground/70 leading-relaxed font-light">
-            With Christmas and Thai Pongal approaching, we are bringing in 
-            <span className="font-semibold text-accent"> new stock</span> at 
-            <span className="font-semibold text-accent"> lower pricing</span>. 
-            Explore our latest arrivals and get your favorite pieces before they’re gone!
+            With Christmas and Thai Pongal approaching, we are bringing in <span className="font-semibold text-accent">new stock</span> of exquisite collections at <span className="font-semibold text-accent">lower pricing</span>. Explore our latest arrivals and get your favorite pieces before they’re gone!
           </p>
 
-          <div className="bg-accent/10 border border-accent/20 rounded-lg p-4 text-center">
-            <p className="text-xs text-foreground/60 uppercase tracking-wide mb-2">
-              New arrivals coming in:
-            </p>
-            <p className="text-2xl font-serif font-light text-accent">
-              {countdown}
-            </p>
+          {/* Countdown */}
+          <div className="bg-accent/10 border border-accent/20 rounded-lg p-4 items-center text-center">
+            <p className="text-xs text-foreground/60 uppercase tracking-wide mb-2">New arrivals coming in:</p>
+            <p className="text-2xl font-serif font-light text-accent">In a Few Days</p>
           </div>
 
+          {/* CTA Buttons */}
           <div className="flex gap-3 pt-4">
             <button
               onClick={handleClose}
@@ -91,7 +87,6 @@ export default function SpecialOfferPopup() {
             >
               Explore Now
             </button>
-
             <button
               onClick={handleClose}
               className="flex-1 px-6 py-3 border border-accent/40 text-accent font-light rounded-lg hover:border-accent hover:bg-accent/5 transition duration-300 text-sm tracking-wide uppercase"
@@ -99,7 +94,6 @@ export default function SpecialOfferPopup() {
               Later
             </button>
           </div>
-
         </div>
       </div>
     </div>

@@ -533,33 +533,43 @@ var _s = __turbopack_context__.k.signature();
 function SpecialOfferPopup() {
     _s();
     const [isOpen, setIsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [hasShown, setHasShown] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    // useEffect(() => {
-    //   const hasShownPopup = localStorage.getItem("specialOfferShown")
-    //   const isOfferActive = true // Change this to false to disable the popup
-    //   if (isOfferActive && !hasShownPopup) {
-    //     const timer = setTimeout(() => {
-    //       setIsOpen(true)
-    //       setHasShown(true)
-    //     }, 2000)
-    //     return () => clearTimeout(timer)
-    //   }
-    // }, [])
+    const [countdown, setCountdown] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "SpecialOfferPopup.useEffect": ()=>{
-            const isOfferActive = true // Change this to false to disable the popup
-            ;
-            if ("TURBOPACK compile-time truthy", 1) {
-                const timer = setTimeout({
-                    "SpecialOfferPopup.useEffect.timer": ()=>{
-                        setIsOpen(true);
-                        setHasShown(true);
+            // OPEN POPUP IMMEDIATELY (or keep your 2-second delay if needed)
+            const timer = setTimeout({
+                "SpecialOfferPopup.useEffect.timer": ()=>{
+                    setIsOpen(true);
+                }
+            }["SpecialOfferPopup.useEffect.timer"], 1000);
+            return ({
+                "SpecialOfferPopup.useEffect": ()=>clearTimeout(timer)
+            })["SpecialOfferPopup.useEffect"];
+        }
+    }["SpecialOfferPopup.useEffect"], []);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "SpecialOfferPopup.useEffect": ()=>{
+            // TARGET DATE → Christmas 2025
+            const targetDate = new Date("2025-12-16T00:00:00");
+            const interval = setInterval({
+                "SpecialOfferPopup.useEffect.interval": ()=>{
+                    const now = new Date();
+                    const diff = targetDate.getTime() - now.getTime();
+                    if (diff <= 0) {
+                        setCountdown("Arriving Today!");
+                        clearInterval(interval);
+                        return;
                     }
-                }["SpecialOfferPopup.useEffect.timer"], 2000);
-                return ({
-                    "SpecialOfferPopup.useEffect": ()=>clearTimeout(timer)
-                })["SpecialOfferPopup.useEffect"];
-            }
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+                    const minutes = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60));
+                    const seconds = Math.floor(diff % (1000 * 60) / 1000);
+                    setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+                }
+            }["SpecialOfferPopup.useEffect.interval"], 1000);
+            return ({
+                "SpecialOfferPopup.useEffect": ()=>clearInterval(interval)
+            })["SpecialOfferPopup.useEffect"];
         }
     }["SpecialOfferPopup.useEffect"], []);
     const handleClose = ()=>{
@@ -575,7 +585,7 @@ function SpecialOfferPopup() {
                 onClick: handleClose
             }, void 0, false, {
                 fileName: "[project]/Downloads/puvan-tex-website-4/components/special-offer-popup.tsx",
-                lineNumber: 48,
+                lineNumber: 53,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -633,54 +643,54 @@ function SpecialOfferPopup() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-foreground/70 leading-relaxed font-light",
                             children: [
-                                "With Christmas and Thai Pongal approaching, we are bringing in ",
+                                "With Christmas and Thai Pongal approaching, we are bringing in",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "font-semibold text-accent",
-                                    children: "new stock"
+                                    children: " new stock"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/special-offer-popup.tsx",
                                     lineNumber: 73,
-                                    columnNumber: 76
+                                    columnNumber: 13
                                 }, this),
-                                " of exquisite collections at ",
+                                " at",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "font-semibold text-accent",
-                                    children: "lower pricing"
+                                    children: " lower pricing"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/special-offer-popup.tsx",
-                                    lineNumber: 73,
-                                    columnNumber: 165
+                                    lineNumber: 74,
+                                    columnNumber: 13
                                 }, this),
                                 ". Explore our latest arrivals and get your favorite pieces before they’re gone!"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/special-offer-popup.tsx",
-                            lineNumber: 72,
+                            lineNumber: 71,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "bg-accent/10 border border-accent/20 rounded-lg p-4 items-center text-center",
+                            className: "bg-accent/10 border border-accent/20 rounded-lg p-4 text-center",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-xs text-foreground/60 uppercase tracking-wide mb-2",
                                     children: "New arrivals coming in:"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/special-offer-popup.tsx",
-                                    lineNumber: 78,
+                                    lineNumber: 79,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-2xl font-serif font-light text-accent",
-                                    children: "In a Few Days"
+                                    children: countdown
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/special-offer-popup.tsx",
-                                    lineNumber: 79,
+                                    lineNumber: 82,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/special-offer-popup.tsx",
-                            lineNumber: 77,
+                            lineNumber: 78,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -692,7 +702,7 @@ function SpecialOfferPopup() {
                                     children: "Explore Now"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/special-offer-popup.tsx",
-                                    lineNumber: 84,
+                                    lineNumber: 88,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -701,13 +711,13 @@ function SpecialOfferPopup() {
                                     children: "Later"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/special-offer-popup.tsx",
-                                    lineNumber: 90,
+                                    lineNumber: 95,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/special-offer-popup.tsx",
-                            lineNumber: 83,
+                            lineNumber: 87,
                             columnNumber: 11
                         }, this)
                     ]
@@ -718,17 +728,17 @@ function SpecialOfferPopup() {
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/puvan-tex-website-4/components/special-offer-popup.tsx",
-                lineNumber: 51,
+                lineNumber: 55,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/puvan-tex-website-4/components/special-offer-popup.tsx",
-        lineNumber: 46,
+        lineNumber: 52,
         columnNumber: 5
     }, this);
 }
-_s(SpecialOfferPopup, "1b9mTKZUqmsCncXsr2H6lFsw4SQ=");
+_s(SpecialOfferPopup, "1cLJp2YiyR5LPZwxQfKEq3WBqiE=");
 _c = SpecialOfferPopup;
 var _c;
 __turbopack_context__.k.register(_c, "SpecialOfferPopup");
