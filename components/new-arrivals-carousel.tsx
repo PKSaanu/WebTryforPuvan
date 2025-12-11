@@ -193,8 +193,9 @@ export default function NewArrivals() {
           <div
             ref={scrollContainer}
             onScroll={handleScroll}
-            className="carousel-scroll flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory"
+            className="carousel-scroll flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory hide-scrollbar"
           >
+
             {arrivals.map((item) => (
               <div
                 key={item.id}

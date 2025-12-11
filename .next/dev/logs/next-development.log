@@ -199,3 +199,14 @@
 [05:33:06.058] Server  LOG      ✓ Compiled in 34ms
 [05:33:11.423] Server  LOG      ✓ Compiled in 32ms
 [05:33:14.528] Server  LOG      ✓ Compiled in 65ms
+[05:35:07.051] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[05:42:58.511] Server  LOG      ✓ Compiled in 31ms
+[05:43:02.432] Server  LOG      ✓ Compiled in 32ms
+[05:43:09.678] Server  LOG      ✓ Compiled in 27ms
+[05:43:14.921] Server  LOG      ✓ Compiled in 30ms
+[05:43:29.614] Server  LOG      ✓ Compiled in 117ms
+[05:49:09.909] Server  LOG      ✓ Compiled in 88ms
+[05:49:50.270] Server  LOG      ✓ Compiled in 35ms
+[05:50:32.705] Server  LOG      ✓ Compiled in 33ms
+[05:50:35.883] Server  LOG      ✓ Compiled in 38ms
+[05:50:45.791] Server  LOG      ✓ Compiled in 30ms

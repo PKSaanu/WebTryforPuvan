@@ -55,7 +55,7 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose}></div>
 
       {/* Modal */}
-      <div className="relative bg-background border border-accent/20 rounded-2xl overflow-hidden max-w-3xl w-full max-h-[90vh] overflow-y-hidden shadow-2xl shadow-accent/20">
+      <div className="relative bg-background border border-accent/20 rounded-2xl overflow-hidden max-w-3xl w-full max-h-[90vh] shadow-2xl shadow-accent/20">
         {/* Close button */}
         {/* <button
           onClick={onClose}
@@ -64,7 +64,7 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
           <X className="w-6 h-6 text-foreground/60 hover:text-accent" />
         </button> */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 overflow-y-auto scrollbar-hide max-h-[90vh]">
           {/* Image Gallery */}
           <div className="space-y-4">
             <div className="relative overflow-hidden rounded-xl aspect-square bg-muted">
@@ -109,8 +109,8 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
                     key={color.name}
                     onClick={() => setSelectedColor(color)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition ${selectedColor.name === color.name
-                        ? "border-accent bg-accent/10"
-                        : "border-accent/20 hover:border-accent/40"
+                      ? "border-accent bg-accent/10"
+                      : "border-accent/20 hover:border-accent/40"
                       }`}
                   >
                     <div className="w-4 h-4 rounded-full" style={{ backgroundColor: color.hex }}></div>
@@ -129,8 +129,8 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
                     key={size}
                     onClick={() => setSelectedSize(size)}
                     className={`py-2 rounded-lg border-2 font-light text-sm transition ${selectedSize === size
-                        ? "border-accent bg-accent text-background"
-                        : "border-accent/20 text-foreground hover:border-accent/40"
+                      ? "border-accent bg-accent text-background"
+                      : "border-accent/20 text-foreground hover:border-accent/40"
                       }`}
                   >
                     {size}
