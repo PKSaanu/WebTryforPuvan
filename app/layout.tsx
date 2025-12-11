@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   description:
     "Discover premium textile collections featuring South Indian style dresses. Puvan Tex offers new arrivals of sarees, salwars, frocks and more.",
   keywords: "textiles, South Indian dresses, sarees, salwars, frocks, Puvan Tex, Sri Lanka",
-  generator: "v0.app",
 }
 
 export default function RootLayout({

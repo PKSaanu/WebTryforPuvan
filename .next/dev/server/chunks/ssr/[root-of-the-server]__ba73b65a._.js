@@ -76,8 +76,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d
 const metadata = {
     title: "Puvan Tex - Premium Textiles & South Indian Dresses",
     description: "Discover premium textile collections featuring South Indian style dresses. Puvan Tex offers new arrivals of sarees, salwars, frocks and more.",
-    keywords: "textiles, South Indian dresses, sarees, salwars, frocks, Puvan Tex, Sri Lanka",
-    generator: "v0.app"
+    keywords: "textiles, South Indian dresses, sarees, salwars, frocks, Puvan Tex, Sri Lanka"
 };
 function RootLayout({ children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
@@ -88,12 +87,12 @@ function RootLayout({ children }) {
                     src: "https://cdn.lordicon.com/lordicon.js"
                 }, void 0, false, {
                     fileName: "[project]/Downloads/puvan-tex-website-4/app/layout.tsx",
-                    lineNumber: 35,
+                    lineNumber: 34,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/puvan-tex-website-4/app/layout.tsx",
-                lineNumber: 34,
+                lineNumber: 33,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
@@ -102,19 +101,19 @@ function RootLayout({ children }) {
                     children,
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Analytics"], {}, void 0, false, {
                         fileName: "[project]/Downloads/puvan-tex-website-4/app/layout.tsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/puvan-tex-website-4/app/layout.tsx",
-                lineNumber: 37,
+                lineNumber: 36,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/puvan-tex-website-4/app/layout.tsx",
-        lineNumber: 33,
+        lineNumber: 32,
         columnNumber: 5
     }, this);
 }
