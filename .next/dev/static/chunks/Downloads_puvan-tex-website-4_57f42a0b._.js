@@ -2112,9 +2112,8 @@ function LocationMap() {
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "rounded-2xl overflow-hidden shadow-2xl h-96 md:h-[500px] lg:h-[600px] bg-muted border-2 border-accent/30 hover:border-accent/60 transition duration-300 hover:shadow-[0_0_30px_rgba(0,217,255,0.2)]",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
-                        src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4403.735640572341!2d80.69252077546356!3d9.31407578446057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afeb13e67f8d035%3A0x507cca78f916a6e0!2sPuvan%20Tex!5e1!3m2!1sen!2slk!4v1765394411525!5m2!1sen!2slk",
-                        width: "100%",
-                        height: "100%",
+                        src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.21655786797!2d80.69252077566874!3d9.314070490759075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afeb13e67f8d035%3A0x507cca78f916a6e0!2sPuvan%20Tex!5e0!3m2!1sen!2slk!4v1765446145608!5m2!1sen!2slk",
+                        className: "w-full h-full",
                         style: {
                             border: 0
                         },
