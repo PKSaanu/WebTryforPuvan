@@ -65,7 +65,7 @@ export default function Hero() {
           <div className="relative hidden lg:flex w-full h-[600px] items-center justify-center group">
             <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-transparent rounded-2xl z-10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
             <img
-              src="/south-indian-woman-elegant-textile-saree.jpg"
+              src="/silk-blend-saree-emerald-green.jpg"
               alt="Puvan Tex Premium Collection"
               className="w-full h-full object-cover rounded-2xl shadow-2xl transition duration-500 group-hover:shadow-[0_0_40px_rgba(0,217,255,0.3)]"
             />
