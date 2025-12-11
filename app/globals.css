@@ -178,6 +178,60 @@ html {
   }
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(30px, -30px);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-20px, 20px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate(40px, 10px);
+    opacity: 0.6;
+  }
+}
+
+/* Add staggered reveal animations */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out;
 }
@@ -192,6 +246,38 @@ html {
 
 .animate-scale-in {
   animation: scaleIn 0.6s ease-out;
+}
+
+.animate-reveal-up {
+  animation: revealUp 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-reveal-left {
+  animation: revealLeft 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-reveal-right {
+  animation: revealRight 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+/* Stagger delays for cascading reveal effect */
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+.animation-delay-500 {
+  animation-delay: 0.5s;
 }
 
 .carousel-scroll {
@@ -215,4 +301,37 @@ html {
 /* Glow effect for accent elements on dark background */
 .glow-accent {
   text-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+}
+
+/* Radial gradient support for dynamic background */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      rgba(0, 217, 255, 0.05) 25%,
+      rgba(0, 217, 255, 0.05) 26%,
+      transparent 27%,
+      transparent 74%,
+      rgba(0, 217, 255, 0.05) 75%,
+      rgba(0, 217, 255, 0.05) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      rgba(251, 191, 36, 0.03) 25%,
+      rgba(251, 191, 36, 0.03) 26%,
+      transparent 27%,
+      transparent 74%,
+      rgba(251, 191, 36, 0.03) 75%,
+      rgba(251, 191, 36, 0.03) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 50px 50px;
 }
