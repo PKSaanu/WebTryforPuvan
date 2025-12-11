@@ -11,7 +11,7 @@ const arrivals = [
     image: "/blue-silk-saree-traditional-south-indian.jpg",
     tag: "New",
     description: "Handwoven silk with traditional motifs",
-    price: "₨4,500",
+    price: "₨ 4,500",
     fullDescription:
       "Luxurious handwoven silk sarees featuring intricate traditional patterns and premium craftsmanship.",
     images: [
@@ -33,7 +33,7 @@ const arrivals = [
     image: "/maroon-cotton-salwar-suit-traditional.jpg",
     tag: "Trending",
     description: "Comfortable cotton blend with modern cuts",
-    price: "₨2,800",
+    price: "₨ 2,800",
     fullDescription: "Breathable cotton salwar suits perfect for everyday elegance with contemporary tailoring.",
     images: [
       "/maroon-cotton-salwar-suit-traditional.jpg",
@@ -54,7 +54,7 @@ const arrivals = [
     image: "/gold-embroidered-designer-frock-elegant.jpg",
     tag: "Exclusive",
     description: "Elegant designs for special occasions",
-    price: "₨3,200",
+    price: "₨ 3,200",
     fullDescription:
       "Exquisitely designed frocks with gold embroidery, perfect for celebrations and special occasions.",
     images: [
@@ -76,7 +76,7 @@ const arrivals = [
     image: "/emerald-green-silk-saree-premium.jpg",
     tag: "Featured",
     description: "Limited edition collection",
-    price: "₨5,500",
+    price: "₨ 5,500",
     fullDescription: "Limited edition premium sarees with rare designs and exceptional quality materials.",
     images: [
       "/emerald-green-silk-saree-premium.jpg",
@@ -97,7 +97,7 @@ const arrivals = [
     image: "/colorful-kids-traditional-wear-south-indian.jpg",
     tag: "New",
     description: "Perfect for young trendsetters",
-    price: "₨1,800",
+    price: "₨ 1,800",
     fullDescription: "Vibrant and playful designs for children that combine traditional charm with modern comfort.",
     images: [
       "/colorful-kids-traditional-wear-south-indian.jpg",
