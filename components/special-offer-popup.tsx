@@ -5,54 +5,53 @@ import { X } from "lucide-react"
 
 export default function SpecialOfferPopup() {
   const [isOpen, setIsOpen] = useState(false)
-  const [countdown, setCountdown] = useState("")
+  const [autoCloseTime, setAutoCloseTime] = useState(3) // 3-second timer
 
   useEffect(() => {
-    // OPEN POPUP IMMEDIATELY (or keep your 2-second delay if needed)
+    // Show popup immediately (or delay if needed)
     const timer = setTimeout(() => {
       setIsOpen(true)
-    }, 1000)
+    }, 500)
 
     return () => clearTimeout(timer)
   }, [])
 
   useEffect(() => {
-    // TARGET DATE → Christmas 2025
-    const targetDate = new Date("2025-12-16T00:00:00")
+    if (!isOpen) return
 
+    // Auto-close countdown
     const interval = setInterval(() => {
-      const now = new Date()
-      const diff = targetDate.getTime() - now.getTime()
-
-      if (diff <= 0) {
-        setCountdown("Arriving Today!")
-        clearInterval(interval)
-        return
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000)
-
-      setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`)
+      setAutoCloseTime((prev) => {
+        if (prev <= 1) {
+          setIsOpen(false)
+          clearInterval(interval)
+          return 0
+        }
+        return prev - 1
+      })
     }, 1000)
 
     return () => clearInterval(interval)
-  }, [])
-
-  const handleClose = () => {
-    setIsOpen(false)
-    localStorage.setItem("specialOfferShown", "true")
-  }
+  }, [isOpen])
 
   if (!isOpen) return null
 
   return (
-    <div className="fixed pt-[120px] inset-0 z-50 flex items-center justify-center px-4">
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={handleClose}></div>
+    <div className="fixed pt-[120px] inset-0 z-[9999] flex items-center justify-center px-4">
+      {/* Enhanced blurred dark background */}
+      <div
+        className="absolute inset-0 bg-black/70 backdrop-blur-md transition-all duration-500"
+        onClick={() => setIsOpen(false)}
+      ></div>
 
+      {/* Popup */}
       <div className="relative bg-background border border-accent/20 rounded-2xl p-8 max-w-md w-full shadow-2xl shadow-accent/20 animate-in fade-in zoom-in-95 duration-300">
+
+        {/* Small 3-second timer indicator */}
+        <div className="absolute -top-3 -right-3 bg-accent text-background text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
+          {autoCloseTime}s
+        </div>
+
         <div className="space-y-6">
 
           <div className="space-y-2">
@@ -69,31 +68,22 @@ export default function SpecialOfferPopup() {
           </div>
 
           <p className="text-foreground/70 leading-relaxed font-light">
-            With Christmas and Thai Pongal approaching, we are bringing in 
-            <span className="font-semibold text-accent"> new stock</span> at 
-            <span className="font-semibold text-accent"> lower pricing</span>. 
+            With Christmas and Thai Pongal approaching, we are bringing in
+            <span className="font-semibold text-accent"> new stock</span> at
+            <span className="font-semibold text-accent"> lower pricing</span>.
             Explore our latest arrivals and get your favorite pieces before they’re gone!
           </p>
 
-          <div className="bg-accent/10 border border-accent/20 rounded-lg p-4 text-center">
-            <p className="text-xs text-foreground/60 uppercase tracking-wide mb-2">
-              New arrivals coming in:
-            </p>
-            <p className="text-2xl font-serif font-light text-accent">
-              {countdown}
-            </p>
-          </div>
-
           <div className="flex gap-3 pt-4">
             <button
-              onClick={handleClose}
+              onClick={() => setIsOpen(false)}
               className="flex-1 px-6 py-3 bg-accent text-background font-light rounded-lg hover:bg-secondary transition duration-300 text-sm tracking-wide uppercase"
             >
               Explore Now
             </button>
 
             <button
-              onClick={handleClose}
+              onClick={() => setIsOpen(false)}
               className="flex-1 px-6 py-3 border border-accent/40 text-accent font-light rounded-lg hover:border-accent hover:bg-accent/5 transition duration-300 text-sm tracking-wide uppercase"
             >
               Later
