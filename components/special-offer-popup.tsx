@@ -8,6 +8,18 @@ export default function SpecialOfferPopup() {
   const [autoCloseTime, setAutoCloseTime] = useState(3) // 3-second timer
 
   useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [isOpen])
+
+  useEffect(() => {
     // Show popup immediately (or delay if needed)
     const timer = setTimeout(() => {
       setIsOpen(true)
@@ -33,6 +45,7 @@ export default function SpecialOfferPopup() {
 
     return () => clearInterval(interval)
   }, [isOpen])
+  
 
   if (!isOpen) return null
 

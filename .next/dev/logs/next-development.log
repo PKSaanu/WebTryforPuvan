@@ -220,3 +220,21 @@ Import traces:
 [01:28:22.032] Server  LOG      ✓ Compiled in 51ms
 [01:28:24.898] Server  LOG      ✓ Compiled in 36ms
 [01:28:30.861] Server  LOG      ✓ Compiled in 37ms
+[01:33:47.758] Server  LOG      ✓ Compiled in 46ms
+[01:33:58.472] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:33:58.472] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:33:58.472] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/#intro color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#intro","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765558918782}
+[01:34:05.789] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:34:05.789] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:34:05.789] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/#intro color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#intro","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765558926104}
+[01:34:11.558] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:34:11.558] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:34:11.558] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/#intro color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#intro","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765558931872}
+[01:34:16.104] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:34:16.104] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:34:16.104] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/#intro color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#intro","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765558936420}
+[01:34:26.236] Server  LOG      ✓ Compiled in 41ms
+[01:34:31.249] Server  LOG      ✓ Compiled in 48ms
+[01:34:33.032] Server  LOG      ✓ Compiled in 30ms
+[01:36:00.838] Server  LOG      ✓ Compiled in 48ms
+[01:36:02.111] Server  LOG      ✓ Compiled in 32ms
