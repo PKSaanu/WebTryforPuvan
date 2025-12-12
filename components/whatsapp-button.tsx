@@ -19,7 +19,8 @@ export default function WhatsAppButton() {
         title="Chat with us on WhatsApp"
       >
         <lord-icon
-          src="https://cdn.lordicon.com/vyyhrdzw.json"
+          // src="https://cdn.lordicon.com/vyyhrdzw.json"
+          src="https://cdn.lordicon.com/dhcosedn.json"
           trigger="loop"
           style={{ width: "72px", height: "72px" }}
         />

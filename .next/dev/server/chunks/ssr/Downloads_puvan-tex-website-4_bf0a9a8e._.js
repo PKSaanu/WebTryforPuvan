@@ -1976,9 +1976,12 @@ __turbopack_context__.s([
     ()=>LocationMap
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/puvan-tex-website-4/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/puvan-tex-website-4/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 "use client";
 ;
+;
 function LocationMap() {
+    const [isMapLoaded, setIsMapLoaded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "location",
         className: "py-32 px-4 sm:px-6 lg:px-8 bg-muted/30",
@@ -1993,7 +1996,7 @@ function LocationMap() {
                             children: "Visit Us"
                         }, void 0, false, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                            lineNumber: 8,
+                            lineNumber: 13,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -2002,7 +2005,7 @@ function LocationMap() {
                                 "Our",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                                    lineNumber: 11,
+                                    lineNumber: 16,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2010,13 +2013,13 @@ function LocationMap() {
                                     children: "Location"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                                    lineNumber: 12,
+                                    lineNumber: 17,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                            lineNumber: 9,
+                            lineNumber: 14,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2024,34 +2027,67 @@ function LocationMap() {
                             children: "Located in the vibrant northern region of Sri Lanka, serving our community with excellence and authenticity."
                         }, void 0, false, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                            lineNumber: 14,
+                            lineNumber: 19,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                    lineNumber: 7,
+                    lineNumber: 12,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "rounded-2xl overflow-hidden shadow-2xl h-96 md:h-[500px] lg:h-[600px] bg-muted border-2 border-accent/30 hover:border-accent/60 transition duration-300 hover:shadow-[0_0_30px_rgba(0,217,255,0.2)]",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
-                        src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.21655786797!2d80.69252077566874!3d9.314070490759075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afeb13e67f8d035%3A0x507cca78f916a6e0!2sPuvan%20Tex!5e0!3m2!1sen!2slk!4v1765446145608!5m2!1sen!2slk",
-                        className: "w-full h-full",
-                        style: {
-                            border: 0
-                        },
-                        allowFullScreen: true,
-                        loading: "lazy",
-                        referrerPolicy: "no-referrer-when-downgrade"
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                        lineNumber: 20,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
+                    className: "relative rounded-2xl overflow-hidden shadow-2xl h-96 md:h-[500px] lg:h-[600px] bg-muted border-2 border-accent/30 hover:border-accent/60 transition duration-300 hover:shadow-[0_0_30px_rgba(0,217,255,0.2)]",
+                    children: [
+                        !isMapLoaded && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "absolute inset-0 flex flex-col items-center justify-center bg-muted/70 z-20",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("lord-icon", {
+                                    src: "https://cdn.lordicon.com/xmoniccu.json",
+                                    trigger: "loop",
+                                    colors: "primary:#16c79e,secondary:#545454",
+                                    style: {
+                                        width: 150,
+                                        height: 150
+                                    }
+                                }, void 0, false, {
+                                    fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
+                                    lineNumber: 30,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "mt-4 text-foreground font-light text-lg",
+                                    children: "Loading Map..."
+                                }, void 0, false, {
+                                    fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
+                                    lineNumber: 36,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
+                            lineNumber: 29,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
+                            src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.21655786797!2d80.69252077566874!3d9.314070490759075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afeb13e67f8d035%3A0x507cca78f916a6e0!2sPuvan%20Tex!5e0!3m2!1sen!2slk!4v1765446145608!5m2!1sen!2slk",
+                            className: "w-full h-full",
+                            style: {
+                                border: 0
+                            },
+                            allowFullScreen: true,
+                            loading: "lazy",
+                            referrerPolicy: "no-referrer-when-downgrade",
+                            onLoad: ()=>setIsMapLoaded(true)
+                        }, void 0, false, {
+                            fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
+                            lineNumber: 41,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
                     fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                    lineNumber: 19,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2065,7 +2101,7 @@ function LocationMap() {
                                     children: "Address"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                                    lineNumber: 33,
+                                    lineNumber: 55,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2073,13 +2109,13 @@ function LocationMap() {
                                     children: "Puthukudiyiruppu Town, Mullaitiv, Sri Lanka"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                                    lineNumber: 34,
+                                    lineNumber: 56,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                            lineNumber: 32,
+                            lineNumber: 54,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2090,7 +2126,7 @@ function LocationMap() {
                                     children: "Phone"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                                    lineNumber: 37,
+                                    lineNumber: 61,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2099,13 +2135,13 @@ function LocationMap() {
                                     children: "+94 77 110 3133"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                                    lineNumber: 38,
+                                    lineNumber: 62,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                            lineNumber: 36,
+                            lineNumber: 60,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2116,7 +2152,7 @@ function LocationMap() {
                                     children: "WhatsApp"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                                    lineNumber: 43,
+                                    lineNumber: 67,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2127,30 +2163,30 @@ function LocationMap() {
                                     children: "Message Us"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                                    lineNumber: 44,
+                                    lineNumber: 68,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                            lineNumber: 42,
+                            lineNumber: 66,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-                    lineNumber: 31,
+                    lineNumber: 53,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-            lineNumber: 6,
+            lineNumber: 10,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Downloads/puvan-tex-website-4/components/location-map.tsx",
-        lineNumber: 5,
+        lineNumber: 9,
         columnNumber: 5
     }, this);
 }
@@ -2481,7 +2517,8 @@ function WhatsAppButton() {
             "aria-label": "Chat on WhatsApp",
             title: "Chat with us on WhatsApp",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("lord-icon", {
-                src: "https://cdn.lordicon.com/vyyhrdzw.json",
+                // src="https://cdn.lordicon.com/vyyhrdzw.json"
+                src: "https://cdn.lordicon.com/dhcosedn.json",
                 trigger: "loop",
                 style: {
                     width: "72px",
