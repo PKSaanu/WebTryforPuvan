@@ -533,7 +533,7 @@ var _s = __turbopack_context__.k.signature();
 function SpecialOfferPopup() {
     _s();
     const [isOpen, setIsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [autoCloseTime, setAutoCloseTime] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(3) // 3-second timer
+    const [autoCloseTime, setAutoCloseTime] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(4) // 3-second timer
     ;
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "SpecialOfferPopup.useEffect": ()=>{
@@ -723,7 +723,7 @@ function SpecialOfferPopup() {
         columnNumber: 5
     }, this);
 }
-_s(SpecialOfferPopup, "5jEJl8Gk4rkgRi45Y2xeqAyz8f4=");
+_s(SpecialOfferPopup, "HpkSpfOWaa6LS5mU2ymC1Dm2C5c=");
 _c = SpecialOfferPopup;
 var _c;
 __turbopack_context__.k.register(_c, "SpecialOfferPopup");

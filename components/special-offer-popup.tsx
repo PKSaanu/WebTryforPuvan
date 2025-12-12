@@ -5,7 +5,7 @@ import { X } from "lucide-react"
 
 export default function SpecialOfferPopup() {
   const [isOpen, setIsOpen] = useState(false)
-  const [autoCloseTime, setAutoCloseTime] = useState(3) // 3-second timer
+  const [autoCloseTime, setAutoCloseTime] = useState(4) // 3-second timer
 
   useEffect(() => {
     // Show popup immediately (or delay if needed)
