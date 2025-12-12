@@ -2138,7 +2138,7 @@ function LocationMap() {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("lord-icon", {
                                 src: "https://cdn.lordicon.com/xmoniccu.json",
                                 trigger: "loop",
-                                colors: "primary:#16c79e,secondary:#00d9ff",
+                                colors: "primary:#848484,secondary:#00d9ff",
                                 style: {
                                     width: 150,
                                     height: 150

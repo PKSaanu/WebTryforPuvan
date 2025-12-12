@@ -30,7 +30,7 @@ export default function LocationMap() {
               <lord-icon
                 src="https://cdn.lordicon.com/xmoniccu.json"
                 trigger="loop"
-                colors="primary:#16c79e,secondary:#00d9ff"
+                colors="primary:#848484,secondary:#00d9ff"
                 style={{ width: 150, height: 150 }}
               ></lord-icon>
             </div>
