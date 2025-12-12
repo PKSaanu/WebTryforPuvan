@@ -1918,16 +1918,6 @@
     }
   }
 
-  .bg-black\/25 {
-    background-color: #00000040;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .bg-black\/25 {
-      background-color: color-mix(in oklab, var(--color-black) 25%, transparent);
-    }
-  }
-
   .bg-black\/30 {
     background-color: #0000004d;
   }
@@ -6579,20 +6569,20 @@ html {
   background-size: 50px 50px;
 }
 
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
 .scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
