@@ -120,13 +120,6 @@ export default function NewArrivals() {
   const [selectedProduct, setSelectedProduct] = useState<(typeof arrivals)[0] | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const [hasHover, setHasHover] = useState(true)
-
-  useEffect(() => {
-    // Detect if device supports hover (desktop) or not (mobile/tablet)
-    setHasHover(window.matchMedia("(hover: hover)").matches)
-  }, [])
-
   const handleScroll = () => {
     if (scrollContainer.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainer.current
@@ -158,15 +151,15 @@ export default function NewArrivals() {
 
   return (
     <>
+      {/* <section id="arrivals" className="py-32 px-4 sm:px-6 lg:px-8 bg-muted/20"> */}
       <section id="arrivals" className="py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          
-          {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
             <div className="space-y-4">
               <p className="text-xs font-semibold text-accent/70 uppercase tracking-[0.2em]">What's New</p>
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-light text-foreground">
-                New <br />
+                New
+                <br />
                 <span className="text-gradient-cyan-gold">Arrivals</span>
               </h2>
               <p className="text-foreground/60 max-w-md font-light text-sm leading-relaxed">
@@ -198,25 +191,18 @@ export default function NewArrivals() {
             </div>
           </div>
 
-          {/* Cards Carousel */}
           <div
             ref={scrollContainer}
             onScroll={handleScroll}
             className="carousel-scroll flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory hide-scrollbar"
           >
+
             {arrivals.map((item) => (
               <div
                 key={item.id}
                 className="carousel-item flex-shrink-0 w-full md:w-1/2 lg:w-[calc(33.333%-1rem)] snap-start group cursor-pointer"
               >
-
-                {/* ---- Clickable IMAGE WRAPPER ---- */}
-                <div
-                  className="relative overflow-hidden rounded-xl h-96 md:h-[500px] mb-6 bg-muted"
-                  onClick={() => {
-                    if (!hasHover) handleDiscover(item) // mobile & tablet
-                  }}
-                >
+                <div className="relative overflow-hidden rounded-xl h-96 md:h-[500px] mb-6 bg-muted">
                   <img
                     src={item.image || "/placeholder.svg"}
                     alt={item.name}
@@ -230,13 +216,9 @@ export default function NewArrivals() {
                     </span>
                   </div>
 
-                  {/* Hover-only button (desktop), also works on click */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <button
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        handleDiscover(item)
-                      }}
+                      onClick={() => handleDiscover(item)}
                       className="px-8 py-3 bg-accent text-background font-light rounded-full hover:bg-secondary hover:text-secondary-foreground transition duration-300 text-sm tracking-wide"
                     >
                       View Details
@@ -244,7 +226,6 @@ export default function NewArrivals() {
                   </div>
                 </div>
 
-                {/* Info section */}
                 <div className="space-y-2">
                   <h3 className="font-serif text-xl font-light text-foreground group-hover:text-accent transition">
                     {item.name}
@@ -255,7 +236,6 @@ export default function NewArrivals() {
                     <p className="text-sm font-light text-accent">{item.price}</p>
                   </div>
                 </div>
-
               </div>
             ))}
           </div>
