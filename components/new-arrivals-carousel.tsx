@@ -20,11 +20,11 @@ const arrivals = [
       "/blue-silk-saree-traditional-south-indian.jpg",
     ],
     colors: [
-      { name: "Royal Blue", hex: "#4169E1" },
-      { name: "Emerald", hex: "#50C878" },
-      { name: "Maroon", hex: "#800000" },
+      { name: "Royal Blue", hex: "#4169E1", image: "/blue-silk-saree-traditional-south-indian.jpg" },
+      { name: "Emerald", hex: "#50C878", image: "/emerald-green-silk-saree-premium.jpg" },
+      { name: "Maroon", hex: "#800000", image: "/blue-silk-saree-traditional-south-indian.jpg" },
     ],
-    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    sizes: [], // empty for saree
   },
   {
     id: 2,
@@ -41,9 +41,9 @@ const arrivals = [
       "/maroon-cotton-salwar-suit-traditional.jpg",
     ],
     colors: [
-      { name: "Maroon", hex: "#800000" },
-      { name: "Cream", hex: "#FFFDD0" },
-      { name: "Navy", hex: "#000080" },
+      { name: "Maroon", hex: "#800000", image: "/maroon-cotton-salwar-suit-traditional.jpg" },
+      { name: "Cream", hex: "#FFFDD0", image: "/summer-wear-light-colors-cotton-textile.jpg" },
+      { name: "Navy", hex: "#000080", image: "/maroon-cotton-salwar-suit-traditional.jpg" },
     ],
     sizes: ["S", "M", "L", "XL", "XXL"],
   },
@@ -63,11 +63,11 @@ const arrivals = [
       "/gold-embroidered-designer-frock-elegant.jpg",
     ],
     colors: [
-      { name: "Gold", hex: "#FFD700" },
-      { name: "Burgundy", hex: "#800020" },
-      { name: "Black", hex: "#000000" },
+      { name: "Gold", hex: "#FFD700", image: "/gold-embroidered-designer-frock-elegant.jpg" },
+      { name: "Burgundy", hex: "#800020", image: "/kids-traditional-colorful-wear-playful.jpg" },
+      { name: "Black", hex: "#000000", image: "/gold-embroidered-designer-frock-elegant.jpg" },
     ],
-    sizes: ["XS", "S", "M", "L", "XL"],
+    sizes: ["XS", "S", "M", "L", "XL"], // Frocks have sizes
   },
   {
     id: 4,
@@ -84,11 +84,11 @@ const arrivals = [
       "/emerald-green-silk-saree-premium.jpg",
     ],
     colors: [
-      { name: "Emerald", hex: "#50C878" },
-      { name: "Sapphire", hex: "#0F52BA" },
-      { name: "Rose Gold", hex: "#B76E79" },
+      { name: "Emerald", hex: "#50C878", image: "/emerald-green-silk-saree-premium.jpg" },
+      { name: "Sapphire", hex: "#0F52BA", image: "/blue-silk-saree-traditional-south-indian.jpg" },
+      { name: "Rose Gold", hex: "#B76E79", image: "/emerald-green-silk-saree-premium.jpg" },
     ],
-    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    sizes: [], // Sarees will not show sizes
   },
   {
     id: 5,
@@ -105,11 +105,11 @@ const arrivals = [
       "/colorful-kids-traditional-wear-south-indian.jpg",
     ],
     colors: [
-      { name: "Crimson", hex: "#DC143C" },
-      { name: "Saffron", hex: "#FF6600" },
-      { name: "Peacock Blue", hex: "#0A3161" },
+      { name: "Crimson", hex: "#DC143C", image: "/colorful-kids-traditional-wear-south-indian.jpg" },
+      { name: "Saffron", hex: "#FF6600", image: "/kids-traditional-colorful-wear-playful.jpg" },
+      { name: "Peacock Blue", hex: "#0A3161", image: "/colorful-kids-traditional-wear-south-indian.jpg" },
     ],
-    sizes: ["4Y", "6Y", "8Y", "10Y", "12Y"],
+    sizes: ["4Y", "6Y", "8Y", "10Y", "12Y"], // Kids wear has sizes
   },
 ]
 
@@ -117,13 +117,11 @@ export default function NewArrivals() {
   const scrollContainer = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
-  const [selectedProduct, setSelectedProduct] = useState<(typeof arrivals)[0] | null>(null)
+  const [selectedProduct, setSelectedProduct] = useState<typeof arrivals[0] | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
-
   const [hasHover, setHasHover] = useState(true)
 
   useEffect(() => {
-    // Detect if device supports hover (desktop) or not (mobile/tablet)
     setHasHover(window.matchMedia("(hover: hover)").matches)
   }, [])
 
@@ -151,7 +149,7 @@ export default function NewArrivals() {
     }
   }
 
-  const handleDiscover = (product: (typeof arrivals)[0]) => {
+  const handleDiscover = (product: typeof arrivals[0]) => {
     setSelectedProduct(product)
     setIsModalOpen(true)
   }
@@ -160,8 +158,6 @@ export default function NewArrivals() {
     <>
       <section id="arrivals" className="py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          
-          {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
             <div className="space-y-4">
               <p className="text-xs font-semibold text-accent/70 uppercase tracking-[0.2em]">What's New</p>
@@ -179,7 +175,6 @@ export default function NewArrivals() {
                 onClick={() => scroll("left")}
                 disabled={!canScrollLeft}
                 className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center text-accent hover:bg-accent hover:text-background transition disabled:opacity-30 disabled:cursor-not-allowed"
-                aria-label="Scroll left"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
@@ -189,7 +184,6 @@ export default function NewArrivals() {
                 onClick={() => scroll("right")}
                 disabled={!canScrollRight}
                 className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center text-accent hover:bg-accent hover:text-background transition disabled:opacity-30 disabled:cursor-not-allowed"
-                aria-label="Scroll right"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
@@ -198,7 +192,7 @@ export default function NewArrivals() {
             </div>
           </div>
 
-          {/* Cards Carousel */}
+          {/* Carousel */}
           <div
             ref={scrollContainer}
             onScroll={handleScroll}
@@ -209,13 +203,9 @@ export default function NewArrivals() {
                 key={item.id}
                 className="carousel-item flex-shrink-0 w-full md:w-1/2 lg:w-[calc(33.333%-1rem)] snap-start group cursor-pointer"
               >
-
-                {/* ---- Clickable IMAGE WRAPPER ---- */}
                 <div
                   className="relative overflow-hidden rounded-xl h-96 md:h-[500px] mb-6 bg-muted"
-                  onClick={() => {
-                    if (!hasHover) handleDiscover(item) // mobile & tablet
-                  }}
+                  onClick={() => !hasHover && handleDiscover(item)}
                 >
                   <img
                     src={item.image || "/placeholder.svg"}
@@ -223,20 +213,14 @@ export default function NewArrivals() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
                   <div className="absolute top-6 right-6">
                     <span className="px-4 py-2 bg-secondary/90 text-secondary-foreground text-xs font-semibold rounded-full backdrop-blur-sm">
                       {item.tag}
                     </span>
                   </div>
-
-                  {/* Hover-only button (desktop), also works on click */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <button
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        handleDiscover(item)
-                      }}
+                      onClick={(e) => { e.stopPropagation(); handleDiscover(item) }}
                       className="px-8 py-3 bg-accent text-background font-light rounded-full hover:bg-secondary hover:text-secondary-foreground transition duration-300 text-sm tracking-wide"
                     >
                       View Details
@@ -244,18 +228,14 @@ export default function NewArrivals() {
                   </div>
                 </div>
 
-                {/* Info section */}
                 <div className="space-y-2">
-                  <h3 className="font-serif text-xl font-light text-foreground group-hover:text-accent transition">
-                    {item.name}
-                  </h3>
+                  <h3 className="font-serif text-xl font-light text-foreground group-hover:text-accent transition">{item.name}</h3>
                   <p className="text-sm text-foreground/60 font-light">{item.description}</p>
                   <div className="flex justify-between items-center pt-2">
                     <p className="text-xs text-secondary font-semibold uppercase tracking-wider">{item.category}</p>
                     <p className="text-sm font-light text-accent">{item.price}</p>
                   </div>
                 </div>
-
               </div>
             ))}
           </div>
@@ -265,10 +245,7 @@ export default function NewArrivals() {
       {selectedProduct && (
         <ProductDetailModal
           isOpen={isModalOpen}
-          onClose={() => {
-            setIsModalOpen(false)
-            setSelectedProduct(null)
-          }}
+          onClose={() => { setIsModalOpen(false); setSelectedProduct(null) }}
           product={selectedProduct}
         />
       )}

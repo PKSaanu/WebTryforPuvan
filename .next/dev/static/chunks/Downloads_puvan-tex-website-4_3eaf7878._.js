@@ -533,7 +533,7 @@ var _s = __turbopack_context__.k.signature();
 function SpecialOfferPopup() {
     _s();
     const [isOpen, setIsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [autoCloseTime, setAutoCloseTime] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(4) // 3-second timer
+    const [autoCloseTime, setAutoCloseTime] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(3) // 3-second timer
     ;
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "SpecialOfferPopup.useEffect": ()=>{
@@ -723,7 +723,7 @@ function SpecialOfferPopup() {
         columnNumber: 5
     }, this);
 }
-_s(SpecialOfferPopup, "HpkSpfOWaa6LS5mU2ymC1Dm2C5c=");
+_s(SpecialOfferPopup, "5jEJl8Gk4rkgRi45Y2xeqAyz8f4=");
 _c = SpecialOfferPopup;
 var _c;
 __turbopack_context__.k.register(_c, "SpecialOfferPopup");
@@ -747,16 +747,18 @@ var _s = __turbopack_context__.k.signature();
 function ProductDetailModal({ isOpen, onClose, product }) {
     _s();
     const [selectedColor, setSelectedColor] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(product.colors[0]);
-    const [selectedSize, setSelectedSize] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(product.sizes[0]);
+    const [selectedSize, setSelectedSize] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(product.sizes.length > 0 ? product.sizes[0] : "");
     const [currentImageIndex, setCurrentImageIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "ProductDetailModal.useEffect": ()=>{
             if (isOpen) {
                 document.body.style.overflow = "hidden";
+                setSelectedColor(product.colors[0]);
+                setSelectedSize(product.sizes.length > 0 ? product.sizes[0] : "");
+                setCurrentImageIndex(0);
             } else {
                 document.body.style.overflow = "";
             }
-            // Cleanup when component unmounts
             return ({
                 "ProductDetailModal.useEffect": ()=>{
                     document.body.style.overflow = "";
@@ -764,11 +766,27 @@ function ProductDetailModal({ isOpen, onClose, product }) {
             })["ProductDetailModal.useEffect"];
         }
     }["ProductDetailModal.useEffect"], [
-        isOpen
+        isOpen,
+        product
     ]);
+    const handleColorSelect = (color, index)=>{
+        setSelectedColor(color);
+        // Update main image to color's image
+        const imgIndex = product.images.findIndex((img)=>img === color.image);
+        setCurrentImageIndex(imgIndex >= 0 ? imgIndex : 0);
+    };
     const handleWhatsAppClick = ()=>{
         const phoneNumber = "94771103133";
-        const message = "Hello! I'd like to inquire about Puvan Tex new arrivals and collections.";
+        const sizeText = selectedSize ? `Size: ${selectedSize}\n` : "";
+        const message = `Hello!
+    I am interested in Puvan Tex's new collection.
+
+    Product: ${product.name},
+    Category: ${product.category},
+    ${sizeText}Color: ${selectedColor.name},
+    Price: ${product.price}
+
+    Could you please let me know if this item is in stock?`;
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappURL, "_blank");
     };
@@ -781,7 +799,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                 onClick: onClose
             }, void 0, false, {
                 fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                lineNumber: 55,
+                lineNumber: 68,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -800,12 +818,12 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                         className: "w-full h-full object-cover"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                        lineNumber: 71,
+                                        lineNumber: 84,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 70,
+                                    lineNumber: 83,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -819,23 +837,23 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                                 className: "w-full h-full object-cover"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                                lineNumber: 87,
+                                                lineNumber: 100,
                                                 columnNumber: 19
                                             }, this)
                                         }, idx, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 81,
+                                            lineNumber: 94,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 79,
+                                    lineNumber: 92,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                            lineNumber: 69,
+                            lineNumber: 82,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -848,7 +866,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: product.category
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 96,
+                                            lineNumber: 109,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -856,7 +874,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: product.name
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 97,
+                                            lineNumber: 110,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -864,13 +882,13 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: product.price
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 111,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 95,
+                                    lineNumber: 108,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -878,7 +896,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                     children: product.description
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 101,
+                                    lineNumber: 114,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -889,13 +907,13 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: "Available Colors"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 105,
+                                            lineNumber: 118,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex gap-3 flex-wrap",
-                                            children: product.colors.map((color)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    onClick: ()=>setSelectedColor(color),
+                                            children: product.colors.map((color, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>handleColorSelect(color, idx),
                                                     className: `flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition ${selectedColor.name === color.name ? "border-accent bg-accent/10" : "border-accent/20 hover:border-accent/40"}`,
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -905,7 +923,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                                            lineNumber: 116,
+                                                            lineNumber: 129,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -913,27 +931,27 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                                             children: color.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                                            lineNumber: 117,
+                                                            lineNumber: 130,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, color.name, true, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                                    lineNumber: 108,
+                                                    lineNumber: 121,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 106,
+                                            lineNumber: 119,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 104,
+                                    lineNumber: 117,
                                     columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                product.sizes.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "space-y-3",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -941,8 +959,8 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: "Available Size"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 125,
-                                            columnNumber: 15
+                                            lineNumber: 139,
+                                            columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "grid grid-cols-4 gap-2",
@@ -952,19 +970,19 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                                     children: size
                                                 }, size, false, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                                    lineNumber: 128,
-                                                    columnNumber: 19
+                                                    lineNumber: 142,
+                                                    columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 126,
-                                            columnNumber: 15
+                                            lineNumber: 140,
+                                            columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 124,
-                                    columnNumber: 13
+                                    lineNumber: 138,
+                                    columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex gap-3 pt-4",
@@ -975,7 +993,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: "WhatsApp Me"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 144,
+                                            lineNumber: 159,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -984,40 +1002,40 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: "Close"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 147,
+                                            lineNumber: 165,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 143,
+                                    lineNumber: 158,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                            lineNumber: 94,
+                            lineNumber: 107,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                    lineNumber: 67,
+                    lineNumber: 80,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                lineNumber: 58,
+                lineNumber: 71,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-        lineNumber: 53,
+        lineNumber: 66,
         columnNumber: 5
     }, this);
 }
-_s(ProductDetailModal, "zMi/NK1B0fwlY9W78Nt47nKwxmk=");
+_s(ProductDetailModal, "MPNS9niq1oynxnDtA3uQwTtFcV8=");
 _c = ProductDetailModal;
 var _c;
 __turbopack_context__.k.register(_c, "ProductDetailModal");
@@ -1058,25 +1076,21 @@ const arrivals = [
         colors: [
             {
                 name: "Royal Blue",
-                hex: "#4169E1"
+                hex: "#4169E1",
+                image: "/blue-silk-saree-traditional-south-indian.jpg"
             },
             {
                 name: "Emerald",
-                hex: "#50C878"
+                hex: "#50C878",
+                image: "/emerald-green-silk-saree-premium.jpg"
             },
             {
                 name: "Maroon",
-                hex: "#800000"
+                hex: "#800000",
+                image: "/blue-silk-saree-traditional-south-indian.jpg"
             }
         ],
-        sizes: [
-            "XS",
-            "S",
-            "M",
-            "L",
-            "XL",
-            "XXL"
-        ]
+        sizes: []
     },
     {
         id: 2,
@@ -1095,15 +1109,18 @@ const arrivals = [
         colors: [
             {
                 name: "Maroon",
-                hex: "#800000"
+                hex: "#800000",
+                image: "/maroon-cotton-salwar-suit-traditional.jpg"
             },
             {
                 name: "Cream",
-                hex: "#FFFDD0"
+                hex: "#FFFDD0",
+                image: "/summer-wear-light-colors-cotton-textile.jpg"
             },
             {
                 name: "Navy",
-                hex: "#000080"
+                hex: "#000080",
+                image: "/maroon-cotton-salwar-suit-traditional.jpg"
             }
         ],
         sizes: [
@@ -1131,15 +1148,18 @@ const arrivals = [
         colors: [
             {
                 name: "Gold",
-                hex: "#FFD700"
+                hex: "#FFD700",
+                image: "/gold-embroidered-designer-frock-elegant.jpg"
             },
             {
                 name: "Burgundy",
-                hex: "#800020"
+                hex: "#800020",
+                image: "/kids-traditional-colorful-wear-playful.jpg"
             },
             {
                 name: "Black",
-                hex: "#000000"
+                hex: "#000000",
+                image: "/gold-embroidered-designer-frock-elegant.jpg"
             }
         ],
         sizes: [
@@ -1167,25 +1187,21 @@ const arrivals = [
         colors: [
             {
                 name: "Emerald",
-                hex: "#50C878"
+                hex: "#50C878",
+                image: "/emerald-green-silk-saree-premium.jpg"
             },
             {
                 name: "Sapphire",
-                hex: "#0F52BA"
+                hex: "#0F52BA",
+                image: "/blue-silk-saree-traditional-south-indian.jpg"
             },
             {
                 name: "Rose Gold",
-                hex: "#B76E79"
+                hex: "#B76E79",
+                image: "/emerald-green-silk-saree-premium.jpg"
             }
         ],
-        sizes: [
-            "XS",
-            "S",
-            "M",
-            "L",
-            "XL",
-            "XXL"
-        ]
+        sizes: []
     },
     {
         id: 5,
@@ -1204,15 +1220,18 @@ const arrivals = [
         colors: [
             {
                 name: "Crimson",
-                hex: "#DC143C"
+                hex: "#DC143C",
+                image: "/colorful-kids-traditional-wear-south-indian.jpg"
             },
             {
                 name: "Saffron",
-                hex: "#FF6600"
+                hex: "#FF6600",
+                image: "/kids-traditional-colorful-wear-playful.jpg"
             },
             {
                 name: "Peacock Blue",
-                hex: "#0A3161"
+                hex: "#0A3161",
+                image: "/colorful-kids-traditional-wear-south-indian.jpg"
             }
         ],
         sizes: [
@@ -1234,7 +1253,6 @@ function NewArrivals() {
     const [hasHover, setHasHover] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "NewArrivals.useEffect": ()=>{
-            // Detect if device supports hover (desktop) or not (mobile/tablet)
             setHasHover(window.matchMedia("(hover: hover)").matches);
         }
     }["NewArrivals.useEffect"], []);
@@ -1286,7 +1304,7 @@ function NewArrivals() {
                                             children: "What's New"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                            lineNumber: 167,
+                                            lineNumber: 163,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1295,7 +1313,7 @@ function NewArrivals() {
                                                 "New ",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                    lineNumber: 169,
+                                                    lineNumber: 165,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1303,13 +1321,13 @@ function NewArrivals() {
                                                     children: "Arrivals"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                    lineNumber: 170,
+                                                    lineNumber: 166,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                            lineNumber: 168,
+                                            lineNumber: 164,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1317,13 +1335,13 @@ function NewArrivals() {
                                             children: "Discover our latest collections handpicked for discerning taste"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                            lineNumber: 172,
+                                            lineNumber: 168,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                    lineNumber: 166,
+                                    lineNumber: 162,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1333,7 +1351,6 @@ function NewArrivals() {
                                             onClick: ()=>scroll("left"),
                                             disabled: !canScrollLeft,
                                             className: "w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center text-accent hover:bg-accent hover:text-background transition disabled:opacity-30 disabled:cursor-not-allowed",
-                                            "aria-label": "Scroll left",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                                 className: "w-5 h-5",
                                                 fill: "none",
@@ -1346,24 +1363,23 @@ function NewArrivals() {
                                                     d: "M15 19l-7-7 7-7"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                    lineNumber: 185,
+                                                    lineNumber: 180,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                lineNumber: 184,
+                                                lineNumber: 179,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                            lineNumber: 178,
+                                            lineNumber: 174,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             onClick: ()=>scroll("right"),
                                             disabled: !canScrollRight,
                                             className: "w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center text-accent hover:bg-accent hover:text-background transition disabled:opacity-30 disabled:cursor-not-allowed",
-                                            "aria-label": "Scroll right",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                                 className: "w-5 h-5",
                                                 fill: "none",
@@ -1376,29 +1392,29 @@ function NewArrivals() {
                                                     d: "M9 5l7 7-7 7"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                    lineNumber: 195,
+                                                    lineNumber: 189,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                lineNumber: 194,
+                                                lineNumber: 188,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                            lineNumber: 188,
+                                            lineNumber: 183,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                    lineNumber: 177,
+                                    lineNumber: 173,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                            lineNumber: 165,
+                            lineNumber: 161,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1410,9 +1426,7 @@ function NewArrivals() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "relative overflow-hidden rounded-xl h-96 md:h-[500px] mb-6 bg-muted",
-                                            onClick: ()=>{
-                                                if (!hasHover) handleDiscover(item); // mobile & tablet
-                                            },
+                                            onClick: ()=>!hasHover && handleDiscover(item),
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                     src: item.image || "/placeholder.svg",
@@ -1420,14 +1434,14 @@ function NewArrivals() {
                                                     className: "w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                    lineNumber: 220,
+                                                    lineNumber: 210,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                    lineNumber: 225,
+                                                    lineNumber: 215,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1437,12 +1451,12 @@ function NewArrivals() {
                                                         children: item.tag
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                        lineNumber: 228,
+                                                        lineNumber: 217,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                    lineNumber: 227,
+                                                    lineNumber: 216,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1456,18 +1470,18 @@ function NewArrivals() {
                                                         children: "View Details"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                        lineNumber: 235,
+                                                        lineNumber: 222,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                    lineNumber: 234,
+                                                    lineNumber: 221,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                            lineNumber: 214,
+                                            lineNumber: 206,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1478,7 +1492,7 @@ function NewArrivals() {
                                                     children: item.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                    lineNumber: 249,
+                                                    lineNumber: 232,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1486,7 +1500,7 @@ function NewArrivals() {
                                                     children: item.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                    lineNumber: 252,
+                                                    lineNumber: 233,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1497,7 +1511,7 @@ function NewArrivals() {
                                                             children: item.category
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                            lineNumber: 254,
+                                                            lineNumber: 235,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1505,41 +1519,41 @@ function NewArrivals() {
                                                             children: item.price
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                            lineNumber: 255,
+                                                            lineNumber: 236,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                                    lineNumber: 253,
+                                                    lineNumber: 234,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                            lineNumber: 248,
+                                            lineNumber: 231,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, item.id, true, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                                    lineNumber: 208,
+                                    lineNumber: 202,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                            lineNumber: 202,
+                            lineNumber: 196,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                    lineNumber: 162,
+                    lineNumber: 160,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                lineNumber: 161,
+                lineNumber: 159,
                 columnNumber: 7
             }, this),
             selectedProduct && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$components$2f$product$2d$detail$2d$modal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1551,7 +1565,7 @@ function NewArrivals() {
                 product: selectedProduct
             }, void 0, false, {
                 fileName: "[project]/Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx",
-                lineNumber: 266,
+                lineNumber: 246,
                 columnNumber: 9
             }, this)
         ]

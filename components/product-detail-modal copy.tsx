@@ -12,7 +12,7 @@ interface ProductModalProps {
     category: string
     image: string
     description: string
-    colors: Array<{ name: string; hex: string; image: string }>
+    colors: Array<{ name: string; hex: string }>
     sizes: string[]
     price: string
     images: string[]
@@ -21,42 +21,29 @@ interface ProductModalProps {
 
 export default function ProductDetailModal({ isOpen, onClose, product }: ProductModalProps) {
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
-  const [selectedSize, setSelectedSize] = useState(product.sizes.length > 0 ? product.sizes[0] : "")
+  const [selectedSize, setSelectedSize] = useState(product.sizes[0])
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden"
-      setSelectedColor(product.colors[0])
-      setSelectedSize(product.sizes.length > 0 ? product.sizes[0] : "")
-      setCurrentImageIndex(0)
     } else {
       document.body.style.overflow = ""
     }
-    return () => { document.body.style.overflow = "" }
-  }, [isOpen, product])
 
-  const handleColorSelect = (color: typeof selectedColor, index: number) => {
-    setSelectedColor(color)
-    // Update main image to color's image
-    const imgIndex = product.images.findIndex((img) => img === color.image)
-    setCurrentImageIndex(imgIndex >= 0 ? imgIndex : 0)
-  }
+    // Cleanup when component unmounts
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [isOpen])
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "94771103133"
-    const sizeText = selectedSize ? `Size: ${selectedSize}\n` : ""
-    const message = `Hello!
-    I am interested in Puvan Tex's new collection.
-
-    Product: ${product.name},
-    Category: ${product.category},
-    ${sizeText}Color: ${selectedColor.name},
-    Price: ${product.price}
-
-    Could you please let me know if this item is in stock?`
-
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    const message =
+      "Hello! I'd like to inquire about Puvan Tex new arrivals and collections."
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`
     window.open(whatsappURL, "_blank")
   }
 
@@ -72,7 +59,7 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
         {/* Close button */}
         {/* <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 hover:bg-accent/10 rounded-full transition"
+          className="sticky top-4 right-4 absolute z-10 p-2 hover:bg-accent/10 rounded-full transition"
         >
           <X className="w-6 h-6 text-foreground/60 hover:text-accent" />
         </button> */}
@@ -117,10 +104,10 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
             <div className="space-y-3">
               <p className="text-sm font-semibold text-foreground uppercase tracking-wider">Available Colors</p>
               <div className="flex gap-3 flex-wrap">
-                {product.colors.map((color, idx) => (
+                {product.colors.map((color) => (
                   <button
                     key={color.name}
-                    onClick={() => handleColorSelect(color, idx)}
+                    onClick={() => setSelectedColor(color)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition ${selectedColor.name === color.name
                       ? "border-accent bg-accent/10"
                       : "border-accent/20 hover:border-accent/40"
@@ -133,33 +120,28 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
               </div>
             </div>
 
-            {/* Sizes (only if available) */}
-            {product.sizes.length > 0 && (
-              <div className="space-y-3">
-                <p className="text-sm font-semibold text-foreground uppercase tracking-wider">Available Size</p>
-                <div className="grid grid-cols-4 gap-2">
-                  {product.sizes.map((size) => (
-                    <button
-                      key={size}
-                      onClick={() => setSelectedSize(size)}
-                      className={`py-2 rounded-lg border-2 font-light text-sm transition ${selectedSize === size
-                        ? "border-accent bg-accent text-background"
-                        : "border-accent/20 text-foreground hover:border-accent/40"
-                        }`}
-                    >
-                      {size}
-                    </button>
-                  ))}
-                </div>
+            {/* Sizes */}
+            <div className="space-y-3">
+              <p className="text-sm font-semibold text-foreground uppercase tracking-wider">Available Size</p>
+              <div className="grid grid-cols-4 gap-2">
+                {product.sizes.map((size) => (
+                  <button
+                    key={size}
+                    onClick={() => setSelectedSize(size)}
+                    className={`py-2 rounded-lg border-2 font-light text-sm transition ${selectedSize === size
+                      ? "border-accent bg-accent text-background"
+                      : "border-accent/20 text-foreground hover:border-accent/40"
+                      }`}
+                  >
+                    {size}
+                  </button>
+                ))}
               </div>
-            )}
+            </div>
 
             {/* CTA */}
             <div className="flex gap-3 pt-4">
-              <button
-                onClick={handleWhatsAppClick}
-                className="flex-1 px-6 py-3 bg-gradient-to-r from-accent to-secondary text-background font-light rounded-lg hover:shadow-lg hover:shadow-accent/30 transition duration-300 text-sm tracking-wide uppercase"
-              >
+              <button onClick={handleWhatsAppClick} className="flex-1 px-6 py-3 bg-gradient-to-r from-accent to-secondary text-background font-light rounded-lg hover:shadow-lg hover:shadow-accent/30 transition duration-300 text-sm tracking-wide uppercase">
                 WhatsApp Me
               </button>
               <button

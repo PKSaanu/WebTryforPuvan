@@ -128,3 +128,88 @@ Import traces:
 [00:46:01.369] Server  LOG      ✓ Compiled in 47ms
 [00:46:22.461] Server  LOG      ✓ Compiled in 37ms
 [00:46:56.118] Server  LOG      ✓ Compiled in 39ms
+[00:51:17.818] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:51:17.819] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:51:17.819] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/#contact color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#contact","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765556358126}
+[00:51:34.634] Server  LOG      ✓ Compiled in 38ms
+[00:56:07.330] Server  LOG      ✓ Compiled in 41ms
+[00:57:41.700] Server  LOG      ✓ Compiled in 37ms
+[01:01:24.701] Server  LOG      ✓ Compiled in 78ms
+[01:01:54.253] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:01:54.253] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:01:54.253] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765556994559}
+[01:02:27.280] Server  LOG      ✓ Compiled in 44ms
+[01:04:20.124] Server  LOG      ✓ Compiled in 45ms
+[01:07:03.538] Server  LOG      ✓ Compiled in 41ms
+[01:07:10.468] Server  LOG      ✓ Compiled in 35ms
+[01:07:15.702] Server  LOG      ✓ Compiled in 34ms
+[01:07:21.282] Server  LOG      ✓ Compiled in 41ms
+[01:10:33.671] Server  LOG      ✓ Compiled in 36ms
+[01:10:33.777] Browser ERROR   ./Downloads/puvan-tex-website-4/components/product-detail-modal.tsx:50:24
+Parsing ecmascript source code failed
+  48 |     const sizeText = selectedSize ? `Size: ${selectedSize}, ` : ""
+  49 |     const message = `Hello! I'm interested in Puvan Tex's new collection.  
+> 50 |     Product: ${product.}, ${sizeText}Color: ${selectedColor.name}, Price: ${product.price}.`
+     |                        ^
+  51 |
+  52 |     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+  53 |     window.open(whatsappURL, "_blank")
+
+Expected ident
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/puvan-tex-website-4/components/product-detail-modal.tsx [Client Component Browser]
+    ./Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx [Client Component Browser]
+    ./Downloads/puvan-tex-website-4/app/page.tsx [Client Component Browser]
+    ./Downloads/puvan-tex-website-4/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/puvan-tex-website-4/components/product-detail-modal.tsx [Client Component SSR]
+    ./Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx [Client Component SSR]
+    ./Downloads/puvan-tex-website-4/app/page.tsx [Client Component SSR]
+    ./Downloads/puvan-tex-website-4/app/page.tsx [Server Component]
+[01:10:33.791] Browser ERROR   ./Downloads/puvan-tex-website-4/components/product-detail-modal.tsx:50:24
+Parsing ecmascript source code failed
+  48 |     const sizeText = selectedSize ? `Size: ${selectedSize}, ` : ""
+  49 |     const message = `Hello! I'm interested in Puvan Tex's new collection.  
+> 50 |     Product: ${product.}, ${sizeText}Color: ${selectedColor.name}, Price: ${product.price}.`
+     |                        ^
+  51 |
+  52 |     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+  53 |     window.open(whatsappURL, "_blank")
+
+Expected ident
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/puvan-tex-website-4/components/product-detail-modal.tsx [Client Component Browser]
+    ./Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx [Client Component Browser]
+    ./Downloads/puvan-tex-website-4/app/page.tsx [Client Component Browser]
+    ./Downloads/puvan-tex-website-4/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/puvan-tex-website-4/components/product-detail-modal.tsx [Client Component SSR]
+    ./Downloads/puvan-tex-website-4/components/new-arrivals-carousel.tsx [Client Component SSR]
+    ./Downloads/puvan-tex-website-4/app/page.tsx [Client Component SSR]
+    ./Downloads/puvan-tex-website-4/app/page.tsx [Server Component]
+[01:12:22.173] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:12:54.775] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:12:54.775] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:12:54.775] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/#location color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#location","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765557655092}
+[01:18:07.839] Server  LOG      ✓ Compiled in 69ms
+[01:18:10.740] Server  LOG      ✓ Compiled in 35ms
+[01:18:14.353] Server  LOG      ✓ Compiled in 42ms
+[01:18:23.198] Server  LOG      ✓ Compiled in 32ms
+[01:18:25.859] Server  LOG      ✓ Compiled in 36ms
+[01:20:57.269] Server  LOG      ✓ Compiled in 38ms
+[01:21:09.128] Server  LOG      ✓ Compiled in 48ms
+[01:21:11.799] Server  LOG      ✓ Compiled in 36ms
+[01:21:21.117] Server  LOG      ✓ Compiled in 38ms
+[01:21:23.596] Server  LOG      ✓ Compiled in 32ms
+[01:21:31.061] Server  LOG      ✓ Compiled in 35ms
+[01:21:35.632] Server  LOG      ✓ Compiled in 46ms
+[01:21:38.059] Server  LOG      ✓ Compiled in 31ms
+[01:22:06.324] Server  LOG      ✓ Compiled in 28ms
+[01:22:08.459] Server  LOG      ✓ Compiled in 36ms
+[01:22:10.813] Server  LOG      ✓ Compiled in 32ms
