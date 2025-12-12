@@ -151,7 +151,8 @@ export default function NewArrivals() {
 
   return (
     <>
-      <section id="arrivals" className="py-32 px-4 sm:px-6 lg:px-8 bg-muted/20">
+      {/* <section id="arrivals" className="py-32 px-4 sm:px-6 lg:px-8 bg-muted/20"> */}
+      <section id="arrivals" className="py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
             <div className="space-y-4">

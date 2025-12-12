@@ -7,7 +7,7 @@ export default function Hero() {
       className="relative pt-[120px] px-4 sm:px-6 lg:px-8 flex items-center overflow-hidden
                  lg:min-h-screen lg:flex-row flex-col"
     >
-      {/* Background shapes */}
+      {/* Background shapes */} 
       <div className="absolute inset-0 -z-10">
         {/* Decorative blobs */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
