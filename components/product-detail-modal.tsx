@@ -46,9 +46,8 @@ export default function ProductDetailModal({ isOpen, onClose, product }: Product
   const handleWhatsAppClick = () => {
     const phoneNumber = "94771103133"
     const sizeText = selectedSize ? `Size: ${selectedSize}\n` : ""
-    const message = `Hello!
-    I am interested in Puvan Tex's new collection.
-
+    const message = `Hello!I am interested in Puvan Tex's new collection.
+    
     Product: ${product.name},
     Category: ${product.category},
     ${sizeText}Color: ${selectedColor.name},

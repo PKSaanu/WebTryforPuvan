@@ -778,9 +778,8 @@ function ProductDetailModal({ isOpen, onClose, product }) {
     const handleWhatsAppClick = ()=>{
         const phoneNumber = "94771103133";
         const sizeText = selectedSize ? `Size: ${selectedSize}\n` : "";
-        const message = `Hello!
-    I am interested in Puvan Tex's new collection.
-
+        const message = `Hello!I am interested in Puvan Tex's new collection.
+    
     Product: ${product.name},
     Category: ${product.category},
     ${sizeText}Color: ${selectedColor.name},
@@ -799,7 +798,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                 onClick: onClose
             }, void 0, false, {
                 fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                lineNumber: 68,
+                lineNumber: 67,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -818,12 +817,12 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                         className: "w-full h-full object-cover"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                        lineNumber: 84,
+                                        lineNumber: 83,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 83,
+                                    lineNumber: 82,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -837,23 +836,23 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                                 className: "w-full h-full object-cover"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                                lineNumber: 100,
+                                                lineNumber: 99,
                                                 columnNumber: 19
                                             }, this)
                                         }, idx, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 94,
+                                            lineNumber: 93,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 92,
+                                    lineNumber: 91,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                            lineNumber: 82,
+                            lineNumber: 81,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -866,7 +865,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: product.category
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 109,
+                                            lineNumber: 108,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -874,7 +873,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: product.name
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 110,
+                                            lineNumber: 109,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -882,13 +881,13 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: product.price
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 111,
+                                            lineNumber: 110,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 108,
+                                    lineNumber: 107,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -896,7 +895,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                     children: product.description
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 114,
+                                    lineNumber: 113,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -907,7 +906,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: "Available Colors"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 118,
+                                            lineNumber: 117,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -923,7 +922,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                                            lineNumber: 129,
+                                                            lineNumber: 128,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -931,24 +930,24 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                                             children: color.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                                            lineNumber: 130,
+                                                            lineNumber: 129,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, color.name, true, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                                    lineNumber: 121,
+                                                    lineNumber: 120,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 119,
+                                            lineNumber: 118,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 117,
+                                    lineNumber: 116,
                                     columnNumber: 13
                                 }, this),
                                 product.sizes.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -959,7 +958,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: "Available Size"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 139,
+                                            lineNumber: 138,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -970,18 +969,18 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                                     children: size
                                                 }, size, false, {
                                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                                    lineNumber: 142,
+                                                    lineNumber: 141,
                                                     columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 140,
+                                            lineNumber: 139,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 138,
+                                    lineNumber: 137,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -993,7 +992,7 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: "WhatsApp Me"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 159,
+                                            lineNumber: 158,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$puvan$2d$tex$2d$website$2d$4$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1002,36 +1001,36 @@ function ProductDetailModal({ isOpen, onClose, product }) {
                                             children: "Close"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                            lineNumber: 165,
+                                            lineNumber: 164,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                                    lineNumber: 158,
+                                    lineNumber: 157,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                            lineNumber: 107,
+                            lineNumber: 106,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                    lineNumber: 80,
+                    lineNumber: 79,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-                lineNumber: 71,
+                lineNumber: 70,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/puvan-tex-website-4/components/product-detail-modal.tsx",
-        lineNumber: 66,
+        lineNumber: 65,
         columnNumber: 5
     }, this);
 }
